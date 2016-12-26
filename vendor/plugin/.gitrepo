@@ -6,6 +6,6 @@
 [subrepo]
 	remote = git@github.com:naquiuddin/subrepo.git
 	branch = master
-	commit = 84b80a14b8dc17efac408fbb551a416c5669dfa9
-	parent = 0b8c049fe1ee475fc4dcdbf81a3098d4d564f50a
+	commit = 17bd43481a2bf4e4201ef28d4e5a037e1d62a361
+	parent = 205743782463491390f3210766ce0dd6f21a50a1
 	cmdver = 0.3.0
