@@ -1,0 +1,205 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   README.md
+#	new file:   file.txt
+#	new file:   main-2.txt
+#	new file:   main-dir-1/main-file-3
+#	new file:   main-dir-2/main-file-4
+#	new file:   main-file-1
+#	new file:   main-file-2
+#	new file:   vendor/plagan/.gitrepo
+#	new file:   vendor/plagan/README.md
+#	new file:   vendor/plagan/file.txt
+#	new file:   vendor/plagan/lib/index.js
+#	new file:   vendor/plagan/plugin-config.json
+#	new file:   vendor/plugin/.gitrepo
+#	new file:   vendor/plugin/README.md
+#	new file:   vendor/plugin/file.txt
+#	new file:   vendor/plugin/lib/index.js
+#	new file:   vendor/plugin/plugin-config.json
+#
+# ------------------------ >8 ------------------------
+# Do not touch the line above.
+# Everything below will be removed.
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..401c953
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,3 @@
++A demo repository for subtree investigation, acting as the main repository that blends a plugin in as a subtree.
++
++Also see the `subtree-demo-plugin` repo for the companion demo repo, acting as the central code for the subtree.
+diff --git a/file.txt b/file.txt
+new file mode 100644
+index 0000000..b658cef
+--- /dev/null
++++ b/file.txt
+@@ -0,0 +1,2 @@
++Mon Dec 26 14:20:20 IST 2016
++Mon Dec 26 14:22:58 IST 2016
+diff --git a/main-2.txt b/main-2.txt
+new file mode 100644
+index 0000000..c027ed3
+--- /dev/null
++++ b/main-2.txt
+@@ -0,0 +1 @@
++Mon Dec 26 14:11:46 IST 2016
+diff --git a/main-dir-1/main-file-3 b/main-dir-1/main-file-3
+new file mode 100644
+index 0000000..3f8ee63
+--- /dev/null
++++ b/main-dir-1/main-file-3
+@@ -0,0 +1 @@
++This is file 3 in the main project, under the main-dir-1 directory.
+diff --git a/main-dir-2/main-file-4 b/main-dir-2/main-file-4
+new file mode 100644
+index 0000000..91f3701
+--- /dev/null
++++ b/main-dir-2/main-file-4
+@@ -0,0 +1 @@
++This is file 4 in the main project, under the main-dir-2 directory.
+diff --git a/main-file-1 b/main-file-1
+new file mode 100644
+index 0000000..deb81d0
+--- /dev/null
++++ b/main-file-1
+@@ -0,0 +1 @@
++This is file 1 in the main project.
+diff --git a/main-file-2 b/main-file-2
+new file mode 100644
+index 0000000..1ab1ab0
+--- /dev/null
++++ b/main-file-2
+@@ -0,0 +1 @@
++This is file 2 in the main project.
+diff --git a/vendor/plagan/.gitrepo b/vendor/plagan/.gitrepo
+new file mode 100644
+index 0000000..b1a252f
+--- /dev/null
++++ b/vendor/plagan/.gitrepo
+@@ -0,0 +1,11 @@
++; DO NOT EDIT (unless you know what you are doing)
++;
++; This subdirectory is a git "subrepo", and this file is maintained by the
++; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
++;
++[subrepo]
++	remote = ../remotes/plugin
++	branch = master
++	commit = 9c50df79dc52a80381ad041bd41886e5ffef9cba
++	parent = 0454f09ef8a05aa0d942be75cc7140fb1f039446
++	cmdver = 0.3.0
+diff --git a/vendor/plagan/README.md b/vendor/plagan/README.md
+new file mode 100644
+index 0000000..8183f75
+--- /dev/null
++++ b/vendor/plagan/README.md
+@@ -0,0 +1,3 @@
++A demo repository for subtree investigation, acting as the central code for the subtree, to be blended in "container" repos.
++
++Also see the `subtree-demo-main` repo for the companion demo repo, acting as the main project code that blends this repo in as a subtree.
+diff --git a/vendor/plagan/file.txt b/vendor/plagan/file.txt
+new file mode 100644
+index 0000000..ff2dc68
+--- /dev/null
++++ b/vendor/plagan/file.txt
+@@ -0,0 +1,2 @@
++Mon Dec 26 14:10:28 IST 2016
++Mon Dec 26 14:24:12 IST 2016
+diff --git a/vendor/plagan/lib/index.js b/vendor/plagan/lib/index.js
+new file mode 100644
+index 0000000..6bc59c4
+--- /dev/null
++++ b/vendor/plagan/lib/index.js
+@@ -0,0 +1,11 @@
++'use strict';
++
++/* global Demo */
++
++(function(plugins) {
++  function DemoPlugin() {
++    console.log("Yay plugin!");
++  }
++
++  plugins.register(DemoPlugin);
++})(Demo.plugins);
+diff --git a/vendor/plagan/plugin-config.json b/vendor/plagan/plugin-config.json
+new file mode 100644
+index 0000000..55ccdaf
+--- /dev/null
++++ b/vendor/plagan/plugin-config.json
+@@ -0,0 +1,5 @@
++{
++  "title": "Subtree Demo Plugin",
++  "version": "0.0.1",
++  "description": "A demo plugin for Git subtree investigation"
++}
+diff --git a/vendor/plugin/.gitrepo b/vendor/plugin/.gitrepo
+new file mode 100644
+index 0000000..06e768a
+--- /dev/null
++++ b/vendor/plugin/.gitrepo
+@@ -0,0 +1,11 @@
++; DO NOT EDIT (unless you know what you are doing)
++;
++; This subdirectory is a git "subrepo", and this file is maintained by the
++; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
++;
++[subrepo]
++	remote = ../remotes/plugin
++	branch = master
++	commit = fe6479991d214f4d95ac2ae959d7252a866e01a3
++	parent = b90985a33ec4a0a151dd54a42e3419a3282fbf55
++	cmdver = 0.3.0
+diff --git a/vendor/plugin/README.md b/vendor/plugin/README.md
+new file mode 100644
+index 0000000..8183f75
+--- /dev/null
++++ b/vendor/plugin/README.md
+@@ -0,0 +1,3 @@
++A demo repository for subtree investigation, acting as the central code for the subtree, to be blended in "container" repos.
++
++Also see the `subtree-demo-main` repo for the companion demo repo, acting as the main project code that blends this repo in as a subtree.
+diff --git a/vendor/plugin/file.txt b/vendor/plugin/file.txt
+new file mode 100644
+index 0000000..ff2dc68
+--- /dev/null
++++ b/vendor/plugin/file.txt
+@@ -0,0 +1,2 @@
++Mon Dec 26 14:10:28 IST 2016
++Mon Dec 26 14:24:12 IST 2016
+diff --git a/vendor/plugin/lib/index.js b/vendor/plugin/lib/index.js
+new file mode 100644
+index 0000000..6bc59c4
+--- /dev/null
++++ b/vendor/plugin/lib/index.js
+@@ -0,0 +1,11 @@
++'use strict';
++
++/* global Demo */
++
++(function(plugins) {
++  function DemoPlugin() {
++    console.log("Yay plugin!");
++  }
++
++  plugins.register(DemoPlugin);
++})(Demo.plugins);
+diff --git a/vendor/plugin/plugin-config.json b/vendor/plugin/plugin-config.json
+new file mode 100644
+index 0000000..55ccdaf
+--- /dev/null
++++ b/vendor/plugin/plugin-config.json
+@@ -0,0 +1,5 @@
++{
++  "title": "Subtree Demo Plugin",
++  "version": "0.0.1",
++  "description": "A demo plugin for Git subtree investigation"
++}
